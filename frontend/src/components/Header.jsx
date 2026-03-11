@@ -1,8 +1,3 @@
-// ============================================================
-// components/Header.jsx
-// Top navigation bar / hero header of the app
-// ============================================================
-
 import React from "react";
 
 export default function Header() {
