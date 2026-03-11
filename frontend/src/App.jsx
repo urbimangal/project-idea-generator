@@ -1,7 +1,3 @@
-// ============================================================
-// App.jsx — Root component
-// ============================================================
-
 import React, { useState } from "react";
 import InputForm from "./components/InputForm";
 import ProjectCard from "./components/ProjectCard";
@@ -19,7 +15,6 @@ export default function App() {
     setHasGenerated(true);
 
     try {
-      // IMPORTANT: Call backend on port 3001
       const response = await fetch("http://localhost:3001/api/generate", {
         method: "POST",
         headers: {
