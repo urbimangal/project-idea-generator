@@ -1,8 +1,3 @@
-// ============================================================
-// components/InputForm.jsx  (Redesigned: Modern SaaS Light UI)
-// 3-step form: skill level → tech stack → goal → generate
-// ============================================================
-
 import React, { useState } from "react";
 
 const SKILL_LEVELS = [
@@ -27,7 +22,6 @@ const GOALS = [
   { value: "startup",    label: "Startup MVP",     desc: "Validate your idea",   emoji: "🚀" },
 ];
 
-// ── Step label ────────────────────────────────────────────────
 function StepLabel({ number, title, complete }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
@@ -50,7 +44,6 @@ function StepLabel({ number, title, complete }) {
   );
 }
 
-// ── Divider ───────────────────────────────────────────────────
 function Divider() {
   return <div style={{ height: 1, background: "#f3f4f6", margin: "24px 0" }} />;
 }
@@ -73,7 +66,6 @@ export default function InputForm({ onGenerate, isLoading }) {
   const stepsComplete = [!!skillLevel, selectedTechs.length > 0, !!goal];
   const allComplete   = stepsComplete.every(Boolean);
 
-  // Progress bar width
   const progress = (stepsComplete.filter(Boolean).length / 3) * 100;
 
   return (
