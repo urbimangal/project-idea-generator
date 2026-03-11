@@ -1,23 +1,16 @@
-// ============================================================
-// server.js — Express backend for AI Project Idea Generator
-// ============================================================
-
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
 const PORT = 3001;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Test route
 app.get("/", (req, res) => {
   res.send("Backend is running successfully 🚀");
 });
 
-// Generate project idea route
 app.post("/api/generate", (req, res) => {
   const { skillLevel, techStack, goal } = req.body;
 
@@ -27,7 +20,6 @@ app.post("/api/generate", (req, res) => {
     });
   }
 
-  // Dummy AI-style project generator
   const projectIdea = {
     title: "AI Habit Tracker",
     description:
