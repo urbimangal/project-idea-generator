@@ -1,4 +1,4 @@
-# ⚡ AI Project Idea Generator for Developers
+# ⚡ Project Idea Generator for Developers
 
 > Generate personalized, resume-worthy software project ideas using AI — based on your skill level, tech stack, and goals.
 
