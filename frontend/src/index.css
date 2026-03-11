@@ -1,0 +1,189 @@
+/* Import Tailwind's base, component, and utility styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom CSS Variables ─────────────────────────────────── */
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --border: #1e1e2e;
+  --accent: #00ff88;
+  --accent2: #ff6b35;
+  --text: #e8e8f0;
+  --muted: #6b6b80;
+  --card: #13131c;
+}
+
+/* ── Base Styles ──────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Syne", sans-serif;
+  min-height: 100vh;
+  /* Subtle grid pattern on background */
+  background-image:
+    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── App Animations ───────────────────────────────────────── */
+
+/* Fade in from below */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulsing glow for loading */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Spinning loader */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Shimmer effect for skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.animate-spin-slow {
+  animation: spin 1.5s linear infinite;
+}
+
+/* ── Custom Component Styles ─────────────────────────────── */
+
+/* Glowing border on cards */
+.glow-card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-card:hover {
+  border-color: rgba(0, 255, 136, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
+}
+
+/* Accent button */
+.btn-accent {
+  background: var(--accent);
+  color: #000;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover:not(:disabled) {
+  background: #00e67a;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-accent:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Tag pill style */
+.tag-pill {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+/* Mono text style */
+.mono {
+  font-family: "Space Mono", monospace;
+}
+
+/* Section label */
+.section-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Tech badge */
+.tech-badge {
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  color: var(--accent);
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Roadmap step line */
+.roadmap-step {
+  position: relative;
+  padding-left: 28px;
+}
+
+.roadmap-step::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: -16px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(0, 255, 136, 0.4), transparent);
+}
+
+.roadmap-step:last-child::before {
+  display: none;
+}
+
+.roadmap-dot {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
