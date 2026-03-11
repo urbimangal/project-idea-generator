@@ -1,9 +1,7 @@
-/* Import Tailwind's base, component, and utility styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ── Custom CSS Variables ─────────────────────────────────── */
 :root {
   --bg: #0a0a0f;
   --surface: #111118;
@@ -15,7 +13,6 @@
   --card: #13131c;
 }
 
-/* ── Base Styles ──────────────────────────────────────────── */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,16 +24,12 @@ body {
   color: var(--text);
   font-family: "Syne", sans-serif;
   min-height: 100vh;
-  /* Subtle grid pattern on background */
   background-image:
     linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-/* ── App Animations ───────────────────────────────────────── */
-
-/* Fade in from below */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -48,18 +41,15 @@ body {
   }
 }
 
-/* Pulsing glow for loading */
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
 }
 
-/* Spinning loader */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-/* Shimmer effect for skeleton loading */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -73,9 +63,6 @@ body {
   animation: spin 1.5s linear infinite;
 }
 
-/* ── Custom Component Styles ─────────────────────────────── */
-
-/* Glowing border on cards */
 .glow-card {
   border: 1px solid var(--border);
   background: var(--card);
@@ -87,7 +74,6 @@ body {
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
 }
 
-/* Accent button */
 .btn-accent {
   background: var(--accent);
   color: #000;
@@ -108,7 +94,6 @@ body {
   cursor: not-allowed;
 }
 
-/* Tag pill style */
 .tag-pill {
   font-family: "Space Mono", monospace;
   font-size: 0.7rem;
@@ -117,12 +102,10 @@ body {
   border: 1px solid;
 }
 
-/* Mono text style */
 .mono {
   font-family: "Space Mono", monospace;
 }
 
-/* Section label */
 .section-label {
   font-family: "Space Mono", monospace;
   font-size: 0.65rem;
@@ -131,7 +114,6 @@ body {
   color: var(--accent);
 }
 
-/* Tech badge */
 .tech-badge {
   background: rgba(0, 255, 136, 0.08);
   border: 1px solid rgba(0, 255, 136, 0.2);
@@ -142,7 +124,6 @@ body {
   border-radius: 4px;
 }
 
-/* Roadmap step line */
 .roadmap-step {
   position: relative;
   padding-left: 28px;
@@ -176,7 +157,6 @@ body {
   justify-content: center;
 }
 
-/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
 }
